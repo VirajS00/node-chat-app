@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first node app</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="error"></div>
+    <main>
+        <h1 class="title">Test messaging service</h1>
+        <div class="formContainer">
+            <form id="myFrom">
+                <input type="text" class="textInput" id="name" placeholder="enter name">
+                <textarea name="textarea" id="message" cols="30" rows="10" class="textInput textarea" placeholder="enter message..."></textarea>
+                <input type="button" name="" id="submitButton" class="button" value="submit">
+            </form>
+        </div>
+        <div class="messages" id="messages"></div>
+    </main>
+    <script src="client.js"></script>
+</body>
+</html>
