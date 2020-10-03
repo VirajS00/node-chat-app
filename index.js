@@ -37,11 +37,11 @@ app.post('/posts', (req, res) => {
 	}
 });
 
-// app.get('/posts', (req, res) => {
-// 	messages.find().then((messages) => {
-// 		res.json(messages);
-// 	});
-// });
+app.get('/posts', (req, res) => {
+	messages.find().then((messages) => {
+		res.json(messages);
+	});
+});
 
 const port = process.env.PORT || 5000;
 
