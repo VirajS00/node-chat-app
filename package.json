@@ -1,8 +1,10 @@
 {
 	"name": "FirstNodeProject",
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "This is my first node mongo app",
+	"engines": {
+		"node": "14.13.0"
+	},
 	"scripts": {
 		"start": "node index.js"
 	},
