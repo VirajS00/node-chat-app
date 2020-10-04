@@ -32,7 +32,7 @@ app.post('/posts', (req, res) => {
 	} else {
 		res.status(422);
 		res.json({
-			status : 'please enter name and content'
+			status : 'please enter name and content!'
 		});
 	}
 });
@@ -46,5 +46,5 @@ app.get('/posts', (req, res) => {
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
-	console.log(`listning on ${port}`);
+	console.log(`listning on port ${port}`);
 });
