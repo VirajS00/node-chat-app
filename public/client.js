@@ -12,34 +12,38 @@ function formatAMPM(date) {
 const listMessages = () => {
 	const msgDiv = document.getElementById('messages');
 	fetch('/posts').then((res) => res.json()).then((json) => {
-		json.reverse();
-		msgDiv.innerHTML = '';
-		for (let i = 0; i < json.length; i++) {
-			let date = json[i].date;
-			let message = json[i].message;
-			let name = json[i].name;
-
-			const msgCard = document.createElement('div');
-			msgCard.classList.add('messageCard');
-
-			const nameI = document.createElement('h3');
-			nameI.classList.add('name');
-			nameI.textContent = name;
-
-			const dateI = document.createElement('div');
-			dateI.classList.add('date');
-			dateI.textContent = date;
-
-			const messageI = document.createElement('div');
-			messageI.classList.add('message');
-			messageI.textContent = message;
-
-			msgCard.appendChild(nameI);
-			msgCard.appendChild(dateI);
-			msgCard.appendChild(messageI);
-
-			msgDiv.appendChild(msgCard);
+		if (json.length === 0) {
 			document.querySelector('.loader-container').style.display = 'none';
+		} else {
+			json.reverse();
+			msgDiv.innerHTML = '';
+			for (let i = 0; i < json.length; i++) {
+				let date = json[i].date;
+				let message = json[i].message;
+				let name = json[i].name;
+
+				const msgCard = document.createElement('div');
+				msgCard.classList.add('messageCard');
+
+				const nameI = document.createElement('h3');
+				nameI.classList.add('name');
+				nameI.textContent = name;
+
+				const dateI = document.createElement('div');
+				dateI.classList.add('date');
+				dateI.textContent = date;
+
+				const messageI = document.createElement('div');
+				messageI.classList.add('message');
+				messageI.textContent = message;
+
+				msgCard.appendChild(nameI);
+				msgCard.appendChild(dateI);
+				msgCard.appendChild(messageI);
+
+				msgDiv.appendChild(msgCard);
+				document.querySelector('.loader-container').style.display = 'none';
+			}
 		}
 	});
 };
