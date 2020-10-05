@@ -28,6 +28,7 @@ const listMessages = () => {
 			msgCard.appendChild(messageI);
 
 			msgDiv.appendChild(msgCard);
+			document.querySelector('.loader-container').style.display = 'none';
 		}
 	});
 };
@@ -43,6 +44,8 @@ button.addEventListener('click', () => {
 	let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 	let yyyy = today.getFullYear();
 	let err = [];
+
+	document.querySelector('.loader-container').style.display = 'grid';
 
 	if (name == '') {
 		err.push('Please enter name');
