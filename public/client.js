@@ -1,4 +1,4 @@
-function formatAMPM(date) {
+const formatAMPM = (date) => {
 	let hours = date.getHours();
 	let minutes = date.getMinutes();
 	let ampm = hours >= 12 ? 'pm' : 'am';
@@ -7,7 +7,7 @@ function formatAMPM(date) {
 	minutes = minutes < 10 ? '0' + minutes : minutes;
 	let strTime = hours + ':' + minutes + ' ' + ampm;
 	return strTime;
-}
+};
 
 const listMessages = () => {
 	const msgDiv = document.getElementById('messages');
