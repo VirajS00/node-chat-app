@@ -94,6 +94,7 @@ button.addEventListener('click', () => {
 		const error = document.querySelector('.error');
 		err.forEach((err) => {
 			error.innerHTML += err + '<br>';
+			document.querySelector('.loader-container').style.display = 'none';
 			setTimeout(() => {
 				error.innerHTML = '';
 				err = [];
